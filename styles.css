@@ -1,0 +1,130 @@
+/* Paleta de cores: https://paletadecores.com/paleta/063940/195e63/3e838c/8ebdb6/ece1c3/ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ece1c3;
+}
+
+header {
+    align-items: center;
+}
+
+.fieldheader {
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    background: #8ebdb6;
+    height: 20vh;
+    width: 100vw;
+    border: 0;
+}
+
+.logo {
+
+}
+
+h1 {
+    float: inline-start;
+}
+
+.busca {
+    float: right;
+}
+
+#buscar {
+    width: 50vw;
+    height: 5vh;
+    border-radius: 2vw;
+    text-align: center;
+}
+
+.botaocarrinho {
+    border: 0;
+    background-color: #8ebdb6;
+    cursor: pointer;
+}
+
+.iconecarrinho {
+    width: 5vw;
+    float: right;
+}
+
+#botaologin {
+    width: 10vw;
+    height: 3vh;
+    background-color: #8ebdb6;
+    cursor: pointer;
+}
+
+.categorias {
+    width: 100vw;
+    justify-content: center;
+    background: #3e838c;
+}
+
+.botaocategoria {
+    margin-left: 2vw;
+    width: 17vw;
+    padding: 1.5vw;
+    border: 0;
+    background-color: #3e838c;
+    cursor: pointer;
+}
+
+.anuncios {
+    margin-left: 3vw;
+    margin-top: 2vw;
+}
+
+.botaoanuncios {
+    background: #ece1c3;
+    margin: 1vw;
+    border: 0;
+    cursor: pointer;
+}
+
+.fieldanuncio {
+    margin: 0.5vw;
+    width: 5vw;
+    text-align: center;
+    background: white;
+}
+
+.imagensanuncios {
+    width: 15vw;
+    height: 20vh;
+}
+
+footer {
+    align-items: center;
+}
+
+.fieldfooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #8ebdb6;
+    height: 10vh;
+    width: 100vw;
+    border: 0;
+}
+
+.fieldfooter p {
+    margin-left: 1vw;
+}
+
+.botaofooter {
+    width: 20vw;
+    font-size: 1.3vw;
+    background: #8ebdb6;
+    border: 0;
+    cursor: pointer;
+}
+
+
