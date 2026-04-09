@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <fieldset class="fieldheader">
+            <div class="logo">
+                <h1>Delivery <br> Web</h1>
+            </div>
+            <div class="busca">
+                <form action="#">
+                    <label for="buscar"></label>
+                    <input type="text" placeholder="  Buscar produtos..." id="buscar" name="busca">
+                </form>
+            </div>
+            <div>
+                <input type="button" class="botao" name="botao" id="botaologin" value="Entrar">
+            </div>
+            <div>
+                <button type="submit" class="botaocarrinho">
+                    <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
+                </button>
+            </div>
+        </fieldset>
+    </header>
+    <div>
+        <fieldset class="fieldlogin">
+            <h2>Tela de login</h2>
+            <form action="">
+                <label for="login">Login:</label> 
+                <input type="text" id="login" required> <br>
+                <label for="senha">Senha:</label>
+                <input type="text" id="senha" required>
+                <button type="submit" value="Enviar" class="botao">Enviar</button>
+                <button type="reset" value="Apagar" class="botao">Apagar</button>
+                <p id="cadastro">Não tem conta? <a href="">Clique aqui</a></p>
+            </form>
+        </fieldset>
+    </div>
+    <footer>
+        <fieldset class="fieldfooter">
+            <p>© Copyright 2026 - Todos os direitos abertos Henrique Gama e Luisa Blankenburg</p>
+            <button type="submit" class="botaofooter">
+                <p>Termos e condições de uso</p>
+            </button>
+            <button type="submit" class="botaofooter">
+                <p>Privacidade</p>
+            </button>
+            <button type="submit" class="botaofooter">
+                <p>Contato</p>
+            </button>
+        </fieldset>
+    </footer>
+</body>
+</html>
