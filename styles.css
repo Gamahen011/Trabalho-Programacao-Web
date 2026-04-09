@@ -3,6 +3,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1vw;
 }
 
 body {
@@ -24,12 +26,9 @@ header {
     border: 0;
 }
 
-.logo {
-
-}
-
 h1 {
     float: inline-start;
+    font-size: 2vw;
 }
 
 .busca {
@@ -50,22 +49,29 @@ h1 {
 }
 
 .iconecarrinho {
-    width: 5vw;
+    width: 4vw;
     float: right;
 }
 
 #botaologin {
     width: 10vw;
-    height: 3vh;
-    background-color: #8ebdb6;
+    height: 5vh;
+    background-color: #3e838c;
+    border: 0;
     cursor: pointer;
 }
+
+button:hover {
+    text-decoration: underline;
+}
+
 
 .categorias {
     width: 100vw;
     justify-content: center;
     background: #3e838c;
 }
+
 
 .botaocategoria {
     margin-left: 2vw;
@@ -74,6 +80,11 @@ h1 {
     border: 0;
     background-color: #3e838c;
     cursor: pointer;
+}
+
+.botaocategoria:active {
+    opacity: 0.7;
+    background-color: #c8e6e1;
 }
 
 .anuncios {
