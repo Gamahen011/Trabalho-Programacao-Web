@@ -9,6 +9,7 @@
 
 body {
     background-color: #ece1c3;
+     overflow-x: hidden
 }
 
 header {
@@ -113,6 +114,8 @@ button:hover {
 
 footer {
     align-items: center;
+    grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo, Rodapé */
+    bottom: 0;
 }
 
 .fieldfooter {
@@ -124,6 +127,7 @@ footer {
     height: 10vh;
     width: 100vw;
     border: 0;
+    bottom: 0;
 }
 
 .fieldfooter p {
@@ -138,7 +142,7 @@ footer {
     cursor: pointer;
 }
 
-/* CSS Lofin */
+/* CSS Login */
 
 .fieldlogin {
     margin: 5vw 35vw;
@@ -157,8 +161,8 @@ footer {
     font-size: 1.5vw;
 }
 
-#cadastro {
-    margin: 1.5vw;
+#escolhercadastro {
+    margin: 1vw;
 }
 
 .botao {
@@ -168,3 +172,30 @@ footer {
 }
 
 
+/* CSS Cadastro */
+
+
+.fieldcadastro {
+    margin: 5vw 35vw;
+    width: 18vw;
+    padding: 2vw;
+    height: 75vh;
+    text-align: center;
+}
+
+.fieldcadastro button{
+    width: 7vw;
+}
+
+#escolherlogin {
+    margin: 1vw;
+}
+
+.fieldcadastro input{
+    margin: 1vw;
+}
+
+.fieldcadastro h2 {
+    margin-bottom: 2vw;
+    font-size: 1.5vw;
+}
