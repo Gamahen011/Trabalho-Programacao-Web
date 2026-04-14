@@ -9,7 +9,7 @@
 
 body {
     background-color: #ece1c3;
-     overflow-x: hidden
+    overflow-x: hidden;
 }
 
 header {
@@ -25,6 +25,11 @@ header {
     height: 20vh;
     width: 100vw;
     border: 0;
+}
+
+.botaoinicio {
+    text-decoration: none;
+    color: black;
 }
 
 h1 {
@@ -60,6 +65,8 @@ h1 {
     background-color: #3e838c;
     border: 0;
     cursor: pointer;
+    border-radius: 20vw;
+    color: #ece1c3;
 }
 
 button:hover {
@@ -116,6 +123,7 @@ footer {
     align-items: center;
     grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo, Rodapé */
     bottom: 0;
+    margin: 0;
 }
 
 .fieldfooter {
@@ -143,6 +151,10 @@ footer {
 }
 
 /* CSS Login */
+
+.divmeio {
+    height: 63vh;
+}
 
 .fieldlogin {
     margin: 5vw 35vw;
@@ -176,10 +188,10 @@ footer {
 
 
 .fieldcadastro {
-    margin: 5vw 35vw;
-    width: 18vw;
+    margin: 3.5vw 36vw;
+    width: 23vw;
     padding: 2vw;
-    height: 75vh;
+    height: 60vh;
     text-align: center;
 }
 
