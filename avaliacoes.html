@@ -12,8 +12,11 @@
 <body>
     <header>
         <fieldset class="fieldheader">
-            <div class="logo">
-                <a href="menu.html" class="botaoinicio"><h1>Delivery <br> Web</h1></a>
+            <div>
+                <a href="menu.html" class="botaoinicio">
+                    <img src="imagens/Delivery Web(1).png" alt="Logo Delivery Web" class="logo">
+                    <h1>Delivery <br> Web</h1>
+                </a>
             </div>
             <div class="busca">
                 <form action="#">
@@ -26,7 +29,7 @@
             </div>
             <div>
                 <button type="submit" class="botaocarrinho">
-                    <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
+                    <a href="carrinho.html"><img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho"></a> 
                 </button>
             </div>
         </fieldset>
@@ -49,8 +52,33 @@
                 <p>Promoções</p>
             </button>
         </div>
-        <div class="restaurantes">
-            <!-- Adicionar a buscar por resttaurantes -->
+        <div class="avaliacoes">
+            <div id="produtoavaliacoes">
+                <h2>Avalie este produto</h2>
+                <fieldset id="xisavaliacao">
+                        <div class="textoproduto">
+                            <h2>Hambúrguer</h2> 
+                            <p>Hambúrguer de carne</p>
+                            <strong><p>R$35,00</p></strong>
+                        </div>
+                        <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="imagemcarrinho">
+                </fieldset>
+            </div>
+            <div id="telaavaliacoes">
+                <fieldset id="telaavaliacao">
+                    <h2>Avaliação</h2>
+                    <div id="gostou">
+                        <p>Gostou?</p> 
+                        <img src="imagens/estrelas.webp" alt="Imagem das estrelas" id="imagemavaliacao">
+                    </div>
+                    <div>
+                        <p>Diga-nos a sua opinião: </p>
+                        <textarea name="comentarios" id="comentarios" placeholder="Avaliação..."></textarea>
+                        <input type="submit" value="Enviar" id="enviaravaliacao" class="botao">
+                        <input type="reset" name="apagar" id="apagaravaliacao" value="Apagar" class="botao">
+                    </div>
+                </fieldset>
+            </div>
         </div>
     </div>
     <footer>
