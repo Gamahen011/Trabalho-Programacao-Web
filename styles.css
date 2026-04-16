@@ -27,6 +27,12 @@ header {
     border: 0;
 }
 
+.logo {
+    width: 5vw;
+    float: left;
+    margin-left: -2vw;
+}
+
 .botaoinicio {
     text-decoration: none;
     color: black;
@@ -268,6 +274,7 @@ footer {
 
 .precocarrinho {
     float: right;
+    margin-right: 1vw;
 }
 
 #cep {
@@ -283,7 +290,7 @@ footer {
 
 #cep button {
     float: right;
-    margin-left: 9vw;
+    margin-left: 8vw;
     border: 0;
     border-radius: 20vw;
     background: #ece1c3;
@@ -298,3 +305,43 @@ footer {
     background: #3e838c;
     cursor: pointer;
 }
+
+/* CSS Restaurantes */
+
+.avaliacoes {
+    height: 70vh;
+}
+
+#produtoavaliacoes {
+    float: left;
+}
+
+.avaliacoes h2 {
+    padding: 2vw;
+}
+
+#xisavaliacao {
+    width: 40vw;
+    margin-left: 5vw;
+    display: flex;
+}
+
+#telaavaliacoes {
+    float: right;
+    margin: 5vw;
+    width: 30vw;
+}
+
+#telaavaliacao {
+    padding: 2vw;
+}
+
+#gostou p {
+    display: inline;
+    padding: 2vw;
+}
+
+#imagemavaliacao {
+    width: 5vw;
+}
+
