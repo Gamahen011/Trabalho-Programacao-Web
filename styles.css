@@ -211,3 +211,90 @@ footer {
     margin-bottom: 2vw;
     font-size: 1.5vw;
 }
+
+/* CSS Carrinho */
+
+.produtoscarrinho {
+    float: left;
+    width: 40vw;
+    height: 80vh;
+    margin: 1vw;
+}
+
+.produtoscarrinho fieldset {
+    display: flex;
+    justify-items: center;
+    width: 0;
+    padding: 1vw;
+    margin: 2vw;
+}
+
+#titulocarrinho {
+    margin: 2vw;
+}
+
+.textoproduto {
+    display: block;
+    width: 20vw;
+}
+
+.textoproduto h2, .textoproduto p {
+    padding: 1vw;
+}
+
+.imagemcarrinho {
+    float: right;
+    width: 10vw;
+    margin-left: 10vw;
+}
+
+.telacarrinho {
+    float: right;
+    width: 35vw;
+    margin: 5vw;
+    height: 80vh;
+}
+
+#titulotelacarrinho {
+    background-color: #8ebdb6;
+    justify-items: center;
+}
+
+.textocarrinho {
+    display: inline;
+    padding: 2vw;
+    margin-bottom: 2vw;
+}
+
+.precocarrinho {
+    float: right;
+}
+
+#cep {
+    display: flex;
+    margin: 2vw;
+    border: 0.2;
+}
+
+#cep p {
+    display: inline;
+    padding: 1vw;
+}
+
+#cep button {
+    float: right;
+    margin-left: 9vw;
+    border: 0;
+    border-radius: 20vw;
+    background: #ece1c3;
+    cursor: pointer;
+}
+
+#finalizarcompra button{
+    margin: 10vw;
+    width: 15vw;
+    height: 10vh;
+    border-radius: 20vw;
+    background: #3e838c;
+    cursor: pointer;
+}

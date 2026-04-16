@@ -26,20 +26,67 @@
                 </div>
                 <div>
                     <button type="submit" class="botaocarrinho">
-                        <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
+                        <a href="carrinho.html"><img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho"></a> 
                     </button>
                 </div>
             </fieldset>
         </header>
         <div>
             <div class="produtoscarrinho">
-                <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer">
+                <h2 id="titulocarrinho">Seu carrinho</h2>
+                <fieldset id="xiscarrinho">
+                    <div class="textoproduto">
+                        <h2>1x Hambúrguer</h2> 
+                        <p>Hambúrguer de carne</p>
+                        <strong><p>R$35,00</p></strong>
+                    </div>
+                    <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="imagemcarrinho">
+                </fieldset>
+                <fieldset id="pastelcarrinho">
+                    <div class="textoproduto">
+                        <h2>1x Pastel</h2> 
+                        <p>Pastel de carne</p>
+                        <strong><p>R$18,00</p></strong>
+                    </div>
+                    <img src="imagens/pastel.avif" alt="Imagem do Pastel" class="imagemcarrinho">
+                </fieldset>
+                <fieldset id="fritascarrinho">
+                    <div class="textoproduto">
+                        <h2>1x Batata Frita</h2> 
+                        <p>Porção de fritas</p>
+                        <strong><p>R$30,00</p></strong>
+                    </div>
+                    <img src="imagens/batata--frita.jpeg" alt="Imagem das fritas" class="imagemcarrinho">
+                </fieldset>   
             </div>
             
-            
-            <div class="telacarrinho">
-                <img src="imagens/inspiracaocarrinho.webp" alt="">
-
+            <div>
+                <fieldset class="telacarrinho">
+                    <div id="titulotelacarrinho"> 
+                        <h2>Seu Pedido</h2>
+                    </div>
+                    <div>
+                        <p class="textocarrinho">Subtotal:</p>
+                        <p class="precocarrinho">R$83,00</p> <br>
+                        <p class="textocarrinho">Entrega:</p>
+                        <p class="precocarrinho">R$20,00</p> <br>
+                        <p class="textocarrinho">Total:</p>
+                        <p class="precocarrinho">R$103,00</p>
+                    </div>
+                    <div>
+                        <fieldset id="cep">
+                            <p>Cep atual: xxxxx-xxx</p>
+                            <button type="submit">
+                                <p>Mudar Cep</p>
+                            </button>
+                        </fieldset>
+                    </div>
+                    <div id="finalizarcompra">
+                        <button type="submit">
+                            <p>Finalizar compra</p>
+                        </button>
+                    </div>
+                </fieldset>
 
             </div>
             
