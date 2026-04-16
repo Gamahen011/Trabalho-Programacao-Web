@@ -345,3 +345,95 @@ footer {
     width: 5vw;
 }
 
+
+/* CSS PRODUTO */
+
+.produtoimagem {
+    margin: 2vw;
+    margin-top: 5vw;
+    width: 20vw;
+    height: 20vw;
+    float: inline-start;
+    padding: 1vw;
+    justify-content: center;
+    border-radius: 2vw;
+}
+
+.fieldproduto {
+    width: 80vw;
+    height: 80vh;
+    float: inline-start;
+    margin: 3.5vw 10vw;
+    border-color:#3e838c;
+    border-radius: 2vw;
+}
+
+.fieldtextoproduto {
+    float: inline-start;
+    text-align: left;
+    margin: 2vw;
+    width: 20vw;
+    height: 30vw;
+    font-size: 10vw;;
+    border-radius: 2vw;
+}
+.textoproduto {
+    margin: 1.2vw;
+}
+.descricao {
+    font-size:1vw;
+}
+
+.fieldavaliacoes {
+    width: 25vw;
+    height: 35vw;
+    margin: 2vw;
+    border-radius: 2vw;
+}
+
+.iconepagamento {
+    width: 2.8vw;
+    height: 1.7vw;
+    margin: 0.2vw;
+}
+
+.legenda {
+    text-align: center;
+}
+
+.iconecliente {
+    display: inline;
+    width: 3vw;
+    height: 2.3vw;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    margin-bottom: 0.3vw;
+    padding: 0;
+}
+.estrelas-5 {
+    width: 9vw;
+    height: 1.1vw;
+    padding: 0;
+    margin-left: 1vw;
+}
+.estrelas-4 {
+    width: 7vw;
+    height: 1.1vw;
+    padding: 0;
+    margin-left: 1vw;
+}
+.nota{
+    display: inline;
+    font-size: 1vw;
+    margin-left: 2vw;
+}
+
+.data {
+    font-size:0.8vw;
+    display: inline;
+}
+
+.comentario {
+    font-size: 1vw;
+    margin-left: 2vw;
+}
