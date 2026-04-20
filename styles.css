@@ -350,30 +350,29 @@ footer {
 
 .produtoimagem {
     margin: 2vw;
-    margin-top: 5vw;
     width: 20vw;
     height: 20vw;
-    float: inline-start;
+    display: block;
     padding: 1vw;
-    justify-content: center;
     border-radius: 2vw;
 }
 
 .fieldproduto {
     width: 80vw;
     height: 80vh;
-    float: inline-start;
-    margin: 3.5vw 10vw;
+    display: flex;
+    margin: 3.5vw auto;
     border-color:#3e838c;
     border-radius: 2vw;
+    gap: 2vw;
 }
 
 .fieldtextoproduto {
-    float: inline-start;
-    text-align: left;
     margin: 2vw;
+    display: inline;
+    text-align: left;
     width: 20vw;
-    height: 30vw;
+    height: 35vw;
     font-size: 10vw;;
     border-radius: 2vw;
 }
@@ -385,9 +384,10 @@ footer {
 }
 
 .fieldavaliacoes {
+    margin: 2vw;
+    display: inline;
     width: 25vw;
     height: 35vw;
-    margin: 2vw;
     border-radius: 2vw;
 }
 
@@ -436,4 +436,27 @@ footer {
 .comentario {
     font-size: 1vw;
     margin-left: 2vw;
+}
+
+.botaocolocarcarrinho {
+    width: 15vw;
+    height: 5vh;
+    background-color: #3e838c;
+    border: 0;
+    cursor: pointer;
+    border-radius: 20vw;
+    color: #ece1c3;
+
+}
+
+.imagemebotao {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    gap: 1vw;
+}
+
+#quantidade {
+    text-align: center;    
+    border-radius: 2vw;
 }
