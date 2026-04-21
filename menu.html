@@ -14,7 +14,7 @@
         <fieldset class="fieldheader">
             <div>
                 <a href="menu.html" class="botaoinicio">
-                    <img src="imagens/Delivery Web(1).png" alt="Logo Delivery Web" class="logo">
+                    <img src="imagens/delivery-web.png" alt="Logo Delivery Web" class="logo">
                     <h1>Delivery <br> Web</h1>
                 </a>
             </div>
@@ -25,32 +25,26 @@
                 </form>
             </div>
             <div>
-                <a href="login.html"><input type="button" class="botaologin" name="botao" id="botaologin" value="Entrar"></a>
+                <form action="login.html">
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                </form>
             </div>
             <div>
-                <button type="submit" class="botaocarrinho">
-                    <a href="carrinho.html"><img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho"></a> 
-                </button>
+                <form action="carrinho.html">
+                    <button type="submit" class="botaocarrinho">
+                        <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
+                    </button>
+                </form>     
             </div>
         </fieldset>
     </header>
     <div class="principal">
         <div class="categorias">
-            <button type="submit" id="botaolanches" class="botaocategoria">
-                <p>Lanches</p>
-            </button>
-            <button type="submit" id="botaomarmita" class="botaocategoria">
-                <p>Marmita</p>
-            </button>
-            <button type="submit" id="botaoveganos" class="botaocategoria">
-                <p>Veganos</p>
-            </button>
-            <button type="submit" id="botaobebidas" class="botaocategoria">
-                <p>Bebidas</p>
-            </button>
-            <button type="submit" id="botaopromocoes" class="botaocategoria">
-                <p>Promoções</p>
-            </button>
+            <input type="submit" id="botaolanches" class="botaocategoria" value="Lanches">
+            <input type="submit" id="botaomarmita" class="botaocategoria" value="Marmita">
+            <input type="submit" id="botaoveganos" class="botaocategoria" value="Veganos">
+            <input type="submit" id="botaobebidas" class="botaocategoria" value="Bebidas">
+            <input type="submit" id="botaopromocoes" class="botaocategoria" value="Promoções">
         </div>
         <div class="anuncios">
             <div class="anuncioslanches">
@@ -62,6 +56,7 @@
                         <strong><p>R$35,00</p></strong>
                     </fieldset>
                 </button>
+               
                 <button type="submit" id="botaohotdog" class="botaoanuncios">
                     <fieldset class="fieldanuncio">
                         <img src="imagens/hotdog.jpeg" alt="Imagem HotDog" class="imagensanuncios">
@@ -130,19 +125,17 @@
                 </button>
             </div>
         </div>
+        <form action="avaliacoes.html" id="paraavaliacao">
+            <p>Deseja avaliar algum produto?</p> <br>
+            <input type="submit" value="Avaliar" class="botao">
+        </form>
     </div>
     <footer>
         <fieldset class="fieldfooter">
             <p>© Copyright 2026 - Todos os direitos abertos Henrique Gama e Luisa Blankenburg</p>
-            <button type="submit" class="botaofooter">
-                <p>Termos e condições de uso</p>
-            </button>
-            <button type="submit" class="botaofooter">
-                <p>Privacidade</p>
-            </button>
-            <button type="submit" class="botaofooter">
-                <p>Contato</p>
-            </button>
+            <input type="submit" value="Termos e condições de uso" class="botaofooter">
+            <input type="submit" value="Privacidade" class="botaofooter">
+            <input type="submit" value="Contato" class="botaofooter">
         </fieldset>
     </footer>
 </body>

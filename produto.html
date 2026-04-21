@@ -10,113 +10,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-        <header>
-            <fieldset class="fieldheader">
-                <div>
-                    <a href="menu.html" class="botaoinicio">
-                        <img src="imagens/Delivery Web(1).png" alt="Logo Delivery Web" class="logo">
-                        <h1>Delivery <br> Web</h1>
-                    </a>
-                </div>
-                <div class="busca">
-                    <form action="#">
-                        <label for="buscar"></label>
-                        <input type="text" placeholder="  Buscar produtos..." id="buscar" name="busca">
-                    </form>
-                </div>
-                <div>
-                    <a href="login.html"><input type="button" class="botaologin" name="botao" id="botaologin" value="Entrar"></a>
-                </div>
-                <div>
+    <header>
+        <fieldset class="fieldheader">
+            <div>
+                <a href="menu.html" class="botaoinicio">
+                    <img src="imagens/delivery-web.png" alt="Logo Delivery Web" class="logo">
+                    <h1>Delivery <br> Web</h1>
+                </a>
+            </div>
+            <div class="busca">
+                <form action="#">
+                    <label for="buscar"></label>
+                    <input type="text" placeholder="  Buscar produtos..." id="buscar" name="busca">
+                </form>
+            </div>
+            <div>
+                <form action="login.html">
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                </form>
+            </div>
+            <div>
+                <form action="carrinho.html">
                     <button type="submit" class="botaocarrinho">
-                        <a href="carrinho.html"><img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho"></a> 
+                        <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
                     </button>
-                </div>
-            </fieldset>
-        </header>
-        
-        <div>
-            <fieldset class="fieldproduto">
-                <div class="imagemebotao">
-                    <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="produtoimagem">                        
-                    <button class="botaocolocarcarrinho">Adicionar ao carrinho</button>
-                    <label for="quantidade">Quantidade:</label> <input type="number" id="quantidade" name="quantidade" min="1" max="100" value="1">
-
-                </div>
-
-                <fieldset class="fieldtextoproduto">
-                    <div class="textoproduto">
-                        <p><u><br>Detalhes do produto</u></p>
-                        <p><strong><br>Hambúrguer Tradicional</strong></p>
-
-                        <div class="descricao">
-                            <p><br> Pão, maionese da casa, bife de hambúrguer artesanal, barbecue, tomate, alface, queijo cheddar e ovo.</p>
-                            <p>Prazo de entrega: <strong>10-40min</strong></p>
-                            <p>Preço à vista: <strong>R$35,00</strong></p>
-                            <p>Preço parcelado: <strong> 2x R$17,50</strong></p>
-                            <br>
-                            <form>
-                                <fieldset>
-                                    <legend class="legenda">Formas de pagamento</legend>
-                                    <img src="imagens/master.png" alt="Imagem Boleto" class="iconepagamento">
-                                    <img src="imagens/elo.png" alt="Imagem Boleto" class="iconepagamento">
-                                    <img src="imagens/visa.png" alt="Imagem Boleto" class="iconepagamento">
-                                    <img src="imagens/boleto.png" alt="Imagem Boleto" class="iconepagamento">
-                                    <img src="imagens/pix.png" alt="Imagem Boleto" class="iconepagamento">
-                                </fieldset>
-                            </form>
-                        </div>
+                </form>     
+            </div>
+        </fieldset>
+    </header>
+    <div>
+        <fieldset class="fieldproduto">
+            <div class="imagemebotao">
+                <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="produtoimagem">                        
+                <button class="botaocolocarcarrinho">Adicionar ao carrinho</button>
+                <label for="quantidade">Quantidade:</label> <input type="number" id="quantidade" name="quantidade" min="1" max="100" value="1">
+            </div>
+            <fieldset class="fieldtextoproduto">
+                <div class="textoproduto">
+                    <p><u><br>Detalhes do produto</u></p>
+                    <p><strong><br>Hambúrguer Tradicional</strong></p>
+                    <div class="descricao">
+                        <p><br> Pão, maionese da casa, bife de hambúrguer artesanal, barbecue, tomate, alface, queijo cheddar e ovo.</p>
+                        <p>Prazo de entrega: <strong>10-40min</strong></p>
+                        <p>Preço à vista: <strong>R$35,00</strong></p>
+                        <p>Preço parcelado: <strong> 2x R$17,50</strong></p> <br>
+                        <form>
+                            <fieldset>
+                                <legend class="legenda">Formas de pagamento</legend>
+                                <img src="imagens/master.png" alt="Imagem Boleto" class="iconepagamento">
+                                <img src="imagens/elo.png" alt="Imagem Boleto" class="iconepagamento">
+                                <img src="imagens/visa.png" alt="Imagem Boleto" class="iconepagamento">
+                                <img src="imagens/boleto.png" alt="Imagem Boleto" class="iconepagamento">
+                                <img src="imagens/pix.png" alt="Imagem Boleto" class="iconepagamento">
+                            </fieldset>
+                        </form>
                     </div>
-                </fieldset>
-
-                <fieldset class="fieldavaliacoes">
-                    <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente">
-                    <br>
-                    <p class="nota">5,0</p>
-                    <img src="imagens/5-estrelas.png" alt="5 estrelas" class="estrelas-5">
-                    <p class="data">06/04/2026</p>
-                    <p class="comentario">Maravilhoso! Estava quentinho e chegou rápido</p>
-                    
-
-                    <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente">
-                    <br>
-                    <p class="nota">4,0</p>
-                    <img src="imagens/4-estrelas.png" alt="5 estrelas" class="estrelas-4">
-                    <p class="data">01/04/2026</p>
-                    <p class="comentario">Muito bom, mas demorou mais de 1 hora</p>
-
-                    <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente">
-                    <br>
-                    <p class="nota">4,0</p>
-                    <img src="imagens/4-estrelas.png" alt="5 estrelas" class="estrelas-4">
-                    <p class="data">26/03/2026</p>
-                    <p class="comentario">Gostei de quase tudo do hambúrguer, mas a carne poderia estar um pouco mais passada</p>
-
-                    <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente">
-                    <br>
-                    <p class="nota">5,0</p>
-                    <img src="imagens/5-estrelas.png" alt="5 estrelas" class="estrelas-5">
-                    <p class="data">19/03/2026</p>
-                    <p class="comentario">Muito bom, pedi para minha família e todos gostaram!</p>
-
-                </fieldset>
+                </div>
             </fieldset>
-
-        </div>
-
-        <footer>
-            <fieldset class="fieldfooter">
-                <p>© Copyright 2026 - Todos os direitos abertos Henrique Gama e Luisa Blankenburg</p>
-                <button type="submit" class="botaofooter">
-                    <p>Termos e condições de uso</p>
-                </button>
-                <button type="submit" class="botaofooter">
-                    <p>Privacidade</p>
-                </button>
-                <button type="submit" class="botaofooter">
-                    <p>Contato</p>
-                </button>
+            <fieldset class="fieldavaliacoes">
+                <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente"> <br>
+                <p class="nota">5,0</p>
+                <img src="imagens/5-estrelas.png" alt="5 estrelas" class="estrelas-5">
+                <p class="data">06/04/2026</p>
+                <p class="comentario">Maravilhoso! Estava quentinho e chegou rápido</p>            
+                <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente"> <br>
+                <p class="nota">4,0</p>
+                <img src="imagens/4-estrelas.png" alt="5 estrelas" class="estrelas-4">
+                <p class="data">01/04/2026</p>
+                <p class="comentario">Muito bom, mas demorou mais de 1 hora</p>
+                <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente"> <br>
+                <p class="nota">4,0</p>
+                <img src="imagens/4-estrelas.png" alt="5 estrelas" class="estrelas-4">
+                <p class="data">26/03/2026</p>
+                <p class="comentario">Gostei de quase tudo do hambúrguer, mas a carne poderia estar um pouco mais passada</p>
+                <img src="imagens/iconecliente.png" alt="Icone Cliente" class="iconecliente"> <br>
+                <p class="nota">5,0</p>
+                <img src="imagens/5-estrelas.png" alt="5 estrelas" class="estrelas-5">
+                <p class="data">19/03/2026</p>
+                <p class="comentario">Muito bom, pedi para minha família e todos gostaram!</p>
             </fieldset>
-        </footer>
+        </fieldset>
+    </div>
+    <footer>
+        <fieldset class="fieldfooter">
+            <p>© Copyright 2026 - Todos os direitos abertos Henrique Gama e Luisa Blankenburg</p>
+            <input type="submit" value="Termos e condições de uso" class="botaofooter">
+            <input type="submit" value="Privacidade" class="botaofooter">
+            <input type="submit" value="Contato" class="botaofooter">
+        </fieldset>
+    </footer>
 </body>
 </html>

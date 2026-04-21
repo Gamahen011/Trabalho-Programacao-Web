@@ -12,6 +12,8 @@ body {
     overflow-x: hidden;
 }
 
+/* CSS header */
+
 header {
     align-items: center;
 }
@@ -75,55 +77,11 @@ h1 {
     color: #ece1c3;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     text-decoration: underline;
 }
 
-
-.categorias {
-    width: 100vw;
-    justify-content: center;
-    background: #3e838c;
-}
-
-
-.botaocategoria {
-    margin-left: 2vw;
-    width: 17vw;
-    padding: 1.5vw;
-    border: 0;
-    background-color: #3e838c;
-    cursor: pointer;
-}
-
-.botaocategoria:active {
-    opacity: 0.7;
-    background-color: #c8e6e1;
-}
-
-.anuncios {
-    margin-left: 3vw;
-    margin-top: 2vw;
-}
-
-.botaoanuncios {
-    background: #ece1c3;
-    margin: 1vw;
-    border: 0;
-    cursor: pointer;
-}
-
-.fieldanuncio {
-    margin: 0.5vw;
-    width: 5vw;
-    text-align: center;
-    background: white;
-}
-
-.imagensanuncios {
-    width: 15vw;
-    height: 20vh;
-}
+/* CSS Footer */
 
 footer {
     align-items: center;
@@ -156,6 +114,63 @@ footer {
     cursor: pointer;
 }
 
+#paraavaliacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vw;
+}
+
+/* CSS Menu */
+
+.categorias {
+    width: 100vw;
+    justify-content: center;
+    background: #3e838c;
+}
+
+
+.botaocategoria {
+    margin-left: 2vw;
+    width: 17vw;
+    padding: 1.5vw;
+    border: 0;
+    background-color: #3e838c;
+    cursor: pointer;
+}
+
+.botaocategoria:active {
+    opacity: 0.7;
+    background-color: #c8e6e1;
+}
+
+.anuncios {
+    margin-left: 3vw;
+    margin-top: 2vw;
+}
+
+.botaoanuncios {
+    background: #ece1c3;
+    margin: 1vw;
+    border: 0;
+    width: 5vw;
+    cursor: pointer;
+}
+
+.fieldanuncio {
+    margin: 0.5vw;
+    width: 5vw;
+    text-align: center;
+    background: white;
+}
+
+.imagensanuncios {
+    width: 15vw;
+    height: 20vh;
+}
+
+
+
 /* CSS Login */
 
 .divmeio {
@@ -187,6 +202,7 @@ footer {
     background-color: #8ebdb6;
     width: 5vw;
     height: 4vh;
+    cursor: pointer;
 }
 
 
@@ -281,7 +297,7 @@ footer {
 #cep {
     display: flex;
     margin: 2vw;
-    border: 0.2;
+    border: 0.1vw solid #000000;
 }
 
 #cep p {
@@ -289,7 +305,7 @@ footer {
     padding: 1vw;
 }
 
-#cep button {
+#cep input[type="submit"] {
     float: right;
     margin-left: 8vw;
     border: 0;
@@ -298,7 +314,7 @@ footer {
     cursor: pointer;
 }
 
-#finalizarcompra button{
+#finalizarcompra input[type="submit"] {
     margin: 10vw;
     width: 15vw;
     height: 10vh;
@@ -327,10 +343,15 @@ footer {
     display: flex;
 }
 
+#xisavaliacao strong {
+    margin: 2vw;
+}
+
 #telaavaliacoes {
     float: right;
     margin: 5vw;
     width: 30vw;
+    margin-right: 10vw;
 }
 
 #telaavaliacao {
@@ -344,6 +365,18 @@ footer {
 
 #imagemavaliacao {
     width: 5vw;
+}
+
+#formavaliacao {
+    margin-top: 1vw;
+    padding: 1vw;
+}
+
+#comentarios {
+    width: 25vw;
+    height: 20vh;
+    border-radius: 2vw;
+    padding: 1vw;
 }
 
 
