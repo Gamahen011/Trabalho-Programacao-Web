@@ -67,9 +67,9 @@ h1 {
     float: right;
 }
 
-#botaologin {
-    width: 10vw;
-    height: 5vh;
+.botaologin {
+    width: 100vw;
+    height: 15vh;
     background-color: #3e838c;
     border: 0;
     cursor: pointer;
@@ -150,14 +150,15 @@ footer {
 }
 
 .botaoanuncios {
-    background: #ece1c3;
-    margin: 1vw;
+    margin: 0;
     border: 0;
     cursor: pointer;
+    color: black;
 }
 
 .fieldanuncio {
-    margin: 0.5vw;
+    display: inline;
+    margin: 1vw;
     width: 5vw;
     text-align: center;
     background: white;
