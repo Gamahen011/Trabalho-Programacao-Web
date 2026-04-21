@@ -14,7 +14,7 @@
         <fieldset class="fieldheader">
             <div>
                 <a href="menu.html" class="botaoinicio">
-                    <img src="imagens/Delivery-Web.png" alt="Logo Delivery Web" class="logo">
+                    <img src="imagens/delivery-web.png" alt="Logo Delivery Web" class="logo">
                     <h1>Delivery <br> Web</h1>
                 </a>
             </div>
@@ -25,83 +25,79 @@
                 </form>
             </div>
             <div>
-                <a href="login.html" class="botaologin">Entrar</a>
+                <form action="login.html">
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                </form>
             </div>
             <div>
-                <a href="carrinho.html" class="botaocarrinho">
-                    <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
-                </a> 
+                <form action="carrinho.html">
+                    <button type="submit" class="botaocarrinho">
+                        <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
+                    </button>
+                </form>     
             </div>
         </fieldset>
     </header>
-
-        <div>
-            <div class="produtoscarrinho">
-                <h2 id="titulocarrinho">Seu carrinho</h2>
-                <fieldset id="xiscarrinho">
-                    <div class="textoproduto">
-                        <h2>1x Hambúrguer</h2> 
-                        <p>Hambúrguer de carne</p>
-                        <strong><p>R$35,00</p></strong>
-                    </div>
-                    <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="imagemcarrinho">
-                </fieldset>
-                <fieldset id="pastelcarrinho">
-                    <div class="textoproduto">
-                        <h2>1x Pastel</h2> 
-                        <p>Pastel de carne</p>
-                        <strong><p>R$18,00</p></strong>
-                    </div>
-                    <img src="imagens/pastel.avif" alt="Imagem do Pastel" class="imagemcarrinho">
-                </fieldset>
-                <fieldset id="fritascarrinho">
-                    <div class="textoproduto">
-                        <h2>1x Batata Frita</h2> 
-                        <p>Porção de fritas</p>
-                        <strong><p>R$30,00</p></strong>
-                    </div>
-                    <img src="imagens/batata--frita.jpeg" alt="Imagem das fritas" class="imagemcarrinho">
-                </fieldset>   
-            </div>
-            
-            <div>
-                <fieldset class="telacarrinho">
-                    <div id="titulotelacarrinho"> 
-                        <h2>Seu Pedido</h2>
-                    </div>
-                    <div>
-                        <br><p class="textocarrinho">Subtotal:</p>
-                        <p class="precocarrinho">R$83,00</p> <br> <br>
-                        <p class="textocarrinho">Entrega:</p>
-                        <p class="precocarrinho">R$20,00</p> <br> <br>
-                        <p class="textocarrinho">Total:</p>
-                        <p class="precocarrinho">R$103,00</p>
-                    </div>
-                    <div>
-                        <fieldset id="cep">
-                            <p>Cep atual: 88495-000</p>
-                            <button type="submit">
-                                <p>Mudar Cep</p>
-                            </button>
-                        </fieldset>
-                    </div>
-                    <div id="finalizarcompra">
-                        <button type="submit">
-                            <p>Finalizar compra</p>
-                        </button>
-                    </div>
-                </fieldset>
-            </div>
-            
-        </div>
-        
-        <footer>
-            <fieldset class="fieldfooter">
-                <p>© Copyright 2026 - Todos os direitos abertos Henrique Gama e Luisa Blankenburg</p>
-                <button type="submit" class="botaofooter">Termos e condições de uso</button>
-                <button type="submit" class="botaofooter">Privacidade</button>
-                <button type="submit" class="botaofooter">Contato</button>
+    <div>
+        <div class="produtoscarrinho">
+            <h2 id="titulocarrinho">Seu carrinho</h2>
+            <fieldset id="xiscarrinho">
+                <div class="textoproduto">
+                    <h2>1x Hambúrguer</h2> 
+                    <p>Hambúrguer de carne</p>
+                    <p><strong>R$35,00</strong></p>
+                </div>
+                <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="imagemcarrinho">
             </fieldset>
-        </footer>
+            <fieldset id="pastelcarrinho">
+               <div class="textoproduto">
+                    <h2>1x Pastel</h2> 
+                    <p>Pastel de carne</p>
+                    <p><strong>R$18,00</strong></p>
+                </div>
+                <img src="imagens/pastel.avif" alt="Imagem do Pastel" class="imagemcarrinho">
+            </fieldset>
+            <fieldset id="fritascarrinho">
+                <div class="textoproduto">
+                    <h2>2x Batatas Fritas</h2> 
+                    <p>Porção de fritas</p>
+                    <p><strong>R$60,00 (R$30,00 cada)</strong></p>
+                </div>
+                <img src="imagens/batata--frita.jpeg" alt="Imagem das fritas" class="imagemcarrinho">
+            </fieldset>   
+        </div>    
+        <div>
+           <fieldset class="telacarrinho">
+               <div id="titulotelacarrinho"> 
+                    <h2>Seu Pedido</h2>
+               </div>
+               <div>
+                    <br><p class="textocarrinho">Subtotal:</p>
+                    <p class="precocarrinho">R$113,00</p> <br> <br>
+                    <p class="textocarrinho">Entrega:</p>
+                    <p class="precocarrinho">R$20,00</p> <br> <br>
+                    <p class="textocarrinho">Total:</p>
+                    <p class="precocarrinho">R$133,00</p>
+                </div>
+                <div>
+                    <fieldset id="cep">
+                        <p>Cep atual: 88495-000</p>
+                        <input type="submit" value="Mudar Cep">
+                    </fieldset>
+                </div>
+                <div id="finalizarcompra">
+                   <input type="submit" value="Finalizar compra">
+                </div>
+            </fieldset>
+        </div>    
+    </div>
+    <footer>
+        <fieldset class="fieldfooter">
+            <p>© Copyright 2026 - Todos os direitos abertos Henrique Gama e Luisa Blankenburg</p>
+            <input type="submit" value="Termos e condições de uso" class="botaofooter">
+            <input type="submit" value="Privacidade" class="botaofooter">
+            <input type="submit" value="Contato" class="botaofooter">
+        </fieldset>
+    </footer>    
 </body>
 </html>

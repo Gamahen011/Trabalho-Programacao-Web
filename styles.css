@@ -12,6 +12,8 @@ body {
     overflow-x: hidden;
 }
 
+/* CSS header */
+
 header {
     align-items: center;
 }
@@ -75,10 +77,51 @@ h1 {
     color: #ece1c3;
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     text-decoration: underline;
 }
 
+/* CSS Footer */
+
+footer {
+    align-items: center;
+    grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo, Rodapé */
+    bottom: 0;
+    margin: 0;
+}
+
+.fieldfooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #8ebdb6;
+    height: 10vh;
+    width: 100vw;
+    border: 0;
+    bottom: 0;
+}
+
+.fieldfooter p {
+    margin-left: 1vw;
+}
+
+.botaofooter {
+    width: 20vw;
+    font-size: 1.3vw;
+    background: #8ebdb6;
+    border: 0;
+    cursor: pointer;
+}
+
+#paraavaliacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vw;
+}
+
+/* CSS Menu */
 
 .categorias {
     width: 100vw;
@@ -126,36 +169,7 @@ button:hover {
     height: 20vh;
 }
 
-footer {
-    align-items: center;
-    grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo, Rodapé */
-    bottom: 0;
-    margin: 0;
-}
 
-.fieldfooter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background: #8ebdb6;
-    height: 10vh;
-    width: 100vw;
-    border: 0;
-    bottom: 0;
-}
-
-.fieldfooter p {
-    margin-left: 1vw;
-}
-
-.botaofooter {
-    width: 20vw;
-    font-size: 1.3vw;
-    background: #8ebdb6;
-    border: 0;
-    cursor: pointer;
-}
 
 /* CSS Login */
 
@@ -188,6 +202,7 @@ footer {
     background-color: #8ebdb6;
     width: 5vw;
     height: 4vh;
+    cursor: pointer;
 }
 
 
@@ -282,7 +297,7 @@ footer {
 #cep {
     display: flex;
     margin: 2vw;
-    border: 0.2;
+    border: 0.1vw solid #000000;
 }
 
 #cep p {
@@ -290,7 +305,7 @@ footer {
     padding: 1vw;
 }
 
-#cep button {
+#cep input[type="submit"] {
     float: right;
     margin-left: 8vw;
     border: 0;
@@ -299,7 +314,7 @@ footer {
     cursor: pointer;
 }
 
-#finalizarcompra button{
+#finalizarcompra input[type="submit"] {
     margin: 10vw;
     width: 15vw;
     height: 10vh;
@@ -328,10 +343,15 @@ footer {
     display: flex;
 }
 
+#xisavaliacao strong {
+    margin: 2vw;
+}
+
 #telaavaliacoes {
     float: right;
     margin: 5vw;
     width: 30vw;
+    margin-right: 10vw;
 }
 
 #telaavaliacao {
@@ -345,6 +365,18 @@ footer {
 
 #imagemavaliacao {
     width: 5vw;
+}
+
+#formavaliacao {
+    margin-top: 1vw;
+    padding: 1vw;
+}
+
+#comentarios {
+    width: 25vw;
+    height: 20vh;
+    border-radius: 2vw;
+    padding: 1vw;
 }
 
 
