@@ -223,8 +223,9 @@ footer {
 .produtoscarrinho {
     float: left;
     width: 40vw;
-    height: 80vh;
+    height: 90vh;
     margin: 1vw;
+    margin-bottom: 35vh;
 }
 
 .produtoscarrinho fieldset {
@@ -306,7 +307,7 @@ footer {
     cursor: pointer;
 }
 
-/* CSS Restaurantes */
+/* CSS Avaliações */
 
 .avaliacoes {
     height: 70vh;
@@ -362,6 +363,7 @@ footer {
     height: 80vh;
     display: flex;
     margin: 3.5vw auto;
+    padding: 2vw;
     border-color:#3e838c;
     border-radius: 2vw;
     gap: 2vw;
