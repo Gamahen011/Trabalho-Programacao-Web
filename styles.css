@@ -107,14 +107,15 @@ button:hover {
 }
 
 .botaoanuncios {
-    background: #ece1c3;
-    margin: 1vw;
+    margin: 0;
     border: 0;
     cursor: pointer;
+    color: black;
 }
 
 .fieldanuncio {
-    margin: 0.5vw;
+    display: inline;
+    margin: 1vw;
     width: 5vw;
     text-align: center;
     background: white;
