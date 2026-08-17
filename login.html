@@ -41,14 +41,21 @@
     <div class="divmeio">
         <fieldset class="fieldlogin">
            <h2>Tela de login</h2>
-           <form action="#">
+           <form action="menu.html">
                 <label for="login">Login:</label> 
                 <input type="text" id="login" required> <br>
                 <label for="senha">Senha:</label>
                 <input type="text" id="senha" required>
-                <button type="submit" value="Enviar" class="botao">Enviar</button>
+                <button type="submit" value="Enviar" class="botao" onclick="verificarDados()">Enviar</button>
                 <button type="reset" value="Apagar" class="botao">Apagar</button>
                 <p id="escolhercadastro">Não tem conta? <a href="cadastro.html">Clique aqui</a></p>
+                <div id="modal" class="modal-fundo">
+                    <div class="modal-conteudo">
+                        <h2>Aviso</h2>
+                        <p id="avisoDados"></p>
+                        <button id="fechar">Fechar</button>
+                    </div>
+                </div>
             </form>
         </fieldset>
     </div>
@@ -60,5 +67,25 @@
             <input type="submit" value="Contato" class="botaofooter">
         </fieldset>
     </footer>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const fechar = document.getElementById('fechar');
+
+        function verificarDados() {
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if (login === "" || senha === "") {
+                document.getElementById("avisoDados").textContent = "É necessário digitar usuário e senha para prosseguir."
+                modal.style.display = 'flex';
+            }
+        }
+        
+        fechar.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+    </script>
 </body>
 </html>

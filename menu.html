@@ -19,10 +19,10 @@
                 </a>
             </div>
             <div class="busca">
-                <form action="#">
-                    <label for="buscar"></label>
-                    <input type="text" placeholder="  Buscar produtos..." id="buscar" name="busca">
-                </form>
+                <div class="pesquisa">
+                    <input type="text" id="buscar" placeholder="Digite para buscar..." autocomplete="off">
+                    <div id="sugestoes" class="sugestoes"></div>
+                </div>
             </div>
             <div>
                 <form action="login.html">
@@ -40,46 +40,39 @@
     </header>
 
     <div class="principal">
-        <div class="categorias">
-            <input type="submit" id="botaolanches" class="botaocategoria" value="Lanches">
-            <input type="submit" id="botaomarmita" class="botaocategoria" value="Marmita">
-            <input type="submit" id="botaoveganos" class="botaocategoria" value="Veganos">
-            <input type="submit" id="botaobebidas" class="botaocategoria" value="Bebidas">
-            <input type="submit" id="botaopromocoes" class="botaocategoria" value="Promoções">
-        </div>
         <div class="anuncios">
             <div class="anuncioslanches">
                 <h2>Lanches</h2>
                 <fieldset class="fieldanuncio">
-                    <a href="produto.html" class="botaoanuncios">
+                    <a href="produto.html" class="botaoanuncios" data-id="1" data-nome="Hambúrguer" data-preco="35.00">
                     <img src="imagens/xis.jpeg" alt="Imagem Xis" class="imagensanuncios">Hambúrguer<br>
                     <strong>R$35,00</strong>
                     </a>
                 </fieldset>
 
                 <fieldset class="fieldanuncio">
-                    <a class="botaoanuncios">
+                    <a class="botaoanuncios" data-id="2" data-nome="HotDog" data-preco="20.00">
                     <img src="imagens/hotdog.jpeg" alt="Imagem Hotdog" class="imagensanuncios">Cachorro Quente<br>
                     <strong>R$20,00</strong>
                     </a>
                 </fieldset>
 
                 <fieldset class="fieldanuncio">
-                    <a class="botaoanuncios">
+                    <a class="botaoanuncios" data-id="3" data-nome="Pizza" data-preco="80.00">
                     <img src="imagens/pizza.jpeg" alt="Imagem Pizza" class="imagensanuncios">Pizza<br>
                     <strong>R$80,00</strong>
                     </a>
                 </fieldset>
 
                 <fieldset class="fieldanuncio">
-                    <a class="botaoanuncios">
+                    <a class="botaoanuncios" data-id="4" data-nome="Pastel" data-preco="18.00">
                     <img src="imagens/pastel.avif" alt="Imagem Pastel" class="imagensanuncios">Pastel<br>
                     <strong>R$18,00</strong>
                     </a>
                 </fieldset>
 
                 <fieldset class="fieldanuncio">
-                    <a class="botaoanuncios">
+                    <a class="botaoanuncios" data-id="5" data-nome="Fritas" data-preco="30.00">
                     <img src="imagens/batata--frita.jpeg" alt="Imagem Porção de Fritas" class="imagensanuncios">Porção de Fritas<br>
                     <strong>R$30,00</strong>
                     </a>
@@ -90,34 +83,33 @@
                 <h2>Marmitas</h2>
 
                 <fieldset class="fieldanuncio">
-                        <a class="botaoanuncios">
+                        <a class="botaoanuncios" data-id="6" data-nome="Strogonoff" data-preco="25.00">
                         <img src="imagens/strogonoff.avif" alt="Imagem Strogonoff" class="imagensanuncios">Strogonoff<br>
                         <strong>R$25,00</strong>
                         </a>
                 </fieldset>
-
                 <fieldset class="fieldanuncio">
-                        <a class="botaoanuncios">
+                        <a class="botaoanuncios" data-id="7" data-nome="Frango" data-preco="20.00">
                         <img src="imagens/frango.webp" alt="Imagem Frango" class="imagensanuncios">Frango<br>
                         <strong>R$20,00</strong>
                         </a>
                 </fieldset>
                 <fieldset class="fieldanuncio">
-                        <a class="botaoanuncios">
+                        <a class="botaoanuncios" data-id="8" data-nome="Almôndegas" data-preco="30.00">
                         <img src="imagens/almondegas.avif" alt="Imagem Almôndegas" class="imagensanuncios">Almôndegas<br>
                         <strong>R$30,00</strong>
                         </a>
                 </fieldset>
 
                 <fieldset class="fieldanuncio">
-                        <a class="botaoanuncios">
+                        <a class="botaoanuncios" data-id="9" data-nome="Espaguete" data-preco="25.00">
                         <img src="imagens/espaguete.webp" alt="Imagem Espaguete Bolonhesa" class="imagensanuncios">Espaguete Bolonhesa<br>
                         <strong>R$25,00</strong>
                         </a>
                 </fieldset>
 
                 <fieldset class="fieldanuncio">
-                        <a class="botaoanuncios">
+                        <a class="botaoanuncios" data-id="0" data-nome="Peixe" data-preco="20.00">
                         <img src="imagens/peixe.jpg" alt="Imagem Peixe" class="imagensanuncios">Peixe<br>
                         <strong>R$20,00</strong>
                         </a>
@@ -137,5 +129,30 @@
             <input type="submit" value="Contato" class="botaofooter">
         </fieldset>
     </footer>
+
+    <script>
+        var busca = document.getElementById("buscar");
+        var elementosAnuncios = document.querySelectorAll('.botaoanuncios');
+        var opcoes = Array.from(elementosAnuncios).map(item => item.getAttribute('data-nome'));
+        var sugestoes = document.getElementById("sugestoes");
+
+        busca.addEventListener("input", function() {
+            sugestoes.innerHTML = "";
+            var filtrados = opcoes.filter(item => item.toLowerCase());
+
+            filtrados.forEach(item => {
+                const div = document.createElement("div");
+                div.classList.add("sugestoes-item");
+                div.textContent = item;
+                div.addEventListener("click", () => {
+                    busca.value = item;
+                    sugestoes.innerHTML = "";
+                });
+                sugestoes.appendChild(div);
+            });
+        });
+
+
+    </script>
 </body>
 </html>

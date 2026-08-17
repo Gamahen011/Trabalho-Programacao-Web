@@ -43,17 +43,17 @@
             <div class="imagemebotao">
                 <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="produtoimagem">                        
                 <button class="botaocolocarcarrinho">Adicionar ao carrinho</button>
-                <label for="quantidade">Quantidade:</label> <input type="number" id="quantidade" name="quantidade" min="1" max="100" value="1">
+                <label for="quantidade">Quantidade:</label> <input type="number" id="quantidade" name="quantidade" min="1" max="100" oninput="verificarTotal()">
             </div>
             <fieldset class="fieldtextoproduto">
                 <div class="textoproduto">
                     <p><u><br>Detalhes do produto</u></p>
                     <p><strong><br>Hambúrguer Tradicional</strong></p>
-                    <div class="descricao">
+                    <div class="descricao" data-nome="Hambúrguer" data-preco="35.00">
                         <p><br> Pão, maionese da casa, bife de hambúrguer artesanal, barbecue, tomate, alface, queijo cheddar e ovo.</p>
                         <p>Prazo de entrega: <strong>10-40min</strong></p>
-                        <p>Preço à vista: <strong>R$35,00</strong></p>
-                        <p>Preço parcelado: <strong> 2x R$17,50</strong></p> <br>
+                        <p>Preço à vista: <strong id="preco-a-vista">R$ 0,00</strong></p>
+                        <p>Preço parcelado: <strong id="precoParcelado">R$ 0,00</strong></p> <br>
                         <form>
                             <fieldset>
                                 <legend class="legenda">Formas de pagamento</legend>
@@ -99,5 +99,24 @@
             <input type="submit" value="Contato" class="botaofooter">
         </fieldset>
     </footer>
+
+    <script>
+        const produtoCard = event.target.closest(".descricao");
+        var produtoNome = produtoCard.getAttribute('data-nome');
+        var produtoPreco = produtoCard.getAttribute('data-preco');
+
+        //MUDAR PREÇO DE ACORDO COM QUANTIDADE
+        function verificarTotal() {
+            var inputQuantidade =  document.getElementById('quantidade');
+            var quantidade = parseInt(inputQuantidade.value);
+            var precoTotal = quantidade * 35.00;
+
+            var precoAVista = document.getElementById('preco-a-vista');
+            var precoParcelado = document.getElementById('precoParcelado');
+            precoAVista.textContent = `R$ ${precoTotal.toFixed(2).replace('.', ',')}`;
+            precoParcelado.textContent = ` 2x R$ ${(precoTotal/2).toFixed(2).replace('.', ',')}`;
+        }
+
+    </script>
 </body>
 </html>
