@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -49,7 +50,7 @@
                 <div class="textoproduto">
                     <p><u><br>Detalhes do produto</u></p>
                     <p><strong><br>Hambúrguer Tradicional</strong></p>
-                    <div class="descricao" data-nome="Hambúrguer" data-preco="35.00">
+                    <div class="descricao" data-nome="Hambúrguer" data-preco="35.00" id="descricao-produto">
                         <p><br> Pão, maionese da casa, bife de hambúrguer artesanal, barbecue, tomate, alface, queijo cheddar e ovo.</p>
                         <p>Prazo de entrega: <strong>10-40min</strong></p>
                         <p>Preço à vista: <strong id="preco-a-vista">R$ 0,00</strong></p>
@@ -99,24 +100,5 @@
             <input type="submit" value="Contato" class="botaofooter">
         </fieldset>
     </footer>
-
-    <script>
-        const produtoCard = event.target.closest(".descricao");
-        var produtoNome = produtoCard.getAttribute('data-nome');
-        var produtoPreco = produtoCard.getAttribute('data-preco');
-
-        //MUDAR PREÇO DE ACORDO COM QUANTIDADE
-        function verificarTotal() {
-            var inputQuantidade =  document.getElementById('quantidade');
-            var quantidade = parseInt(inputQuantidade.value);
-            var precoTotal = quantidade * 35.00;
-
-            var precoAVista = document.getElementById('preco-a-vista');
-            var precoParcelado = document.getElementById('precoParcelado');
-            precoAVista.textContent = `R$ ${precoTotal.toFixed(2).replace('.', ',')}`;
-            precoParcelado.textContent = ` 2x R$ ${(precoTotal/2).toFixed(2).replace('.', ',')}`;
-        }
-
-    </script>
 </body>
 </html>

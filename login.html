@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -46,14 +47,14 @@
                 <input type="text" id="login" required> <br>
                 <label for="senha">Senha:</label>
                 <input type="text" id="senha" required>
-                <button type="submit" value="Enviar" class="botao" onclick="verificarDados()">Enviar</button>
+                <button type="submit" value="Enviar" class="botao" onclick="verificarDados('login')">Enviar</button>
                 <button type="reset" value="Apagar" class="botao">Apagar</button>
                 <p id="escolhercadastro">Não tem conta? <a href="cadastro.html">Clique aqui</a></p>
                 <div id="modal" class="modal-fundo">
                     <div class="modal-conteudo">
                         <h2>Aviso</h2>
-                        <p id="avisoDados"></p>
-                        <button id="fechar">Fechar</button>
+                        <p id="avisoDados"></p> <br>
+                        <button id="fechar" class="botao">Fechar</button>
                     </div>
                 </div>
             </form>
@@ -67,25 +68,5 @@
             <input type="submit" value="Contato" class="botaofooter">
         </fieldset>
     </footer>
-
-    <script>
-        const modal = document.getElementById('modal');
-        const fechar = document.getElementById('fechar');
-
-        function verificarDados() {
-            var login = document.getElementById('login').value;
-            var senha = document.getElementById('senha').value;
-
-            if (login === "" || senha === "") {
-                document.getElementById("avisoDados").textContent = "É necessário digitar usuário e senha para prosseguir."
-                modal.style.display = 'flex';
-            }
-        }
-        
-        fechar.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    font-size: 1.1vw;
+    font-size: 16px;;
 }
 
 body {
@@ -42,7 +42,7 @@ header {
 
 h1 {
     float: inline-start;
-    font-size: 2vw;
+    font-size: 34px;
 }
 
 .busca {
@@ -104,7 +104,7 @@ footer {
 
 .fieldfooter p {
     margin-left: 1vw;
-    font-size: 0.8vw;
+    font-size: 18px;
 }
 
 .botaofooter {
@@ -113,7 +113,7 @@ footer {
     background: #8ebdb6;
     border: 0;
     cursor: pointer;
-    font-size: 0.8vw;
+    font-size: 18px;
 }
 
 #paraavaliacao {
