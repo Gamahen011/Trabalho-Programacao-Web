@@ -345,18 +345,18 @@ footer {
     margin-right: 1vw;
 }
 
-#cep {
+#cep, #cupons {
     display: flex;
     margin: 2vw;
     border: 0.1vw solid #000000;
 }
 
-#cep p {
+#cep p, #cupons p {
     display: inline;
     padding: 1vw;
 }
 
-#cep input[type="submit"] {
+#cep input[type="submit"], #cupons input[type="submit"] {
     float: right;
     margin-left: 8vw;
     border: 0;
@@ -366,7 +366,7 @@ footer {
 }
 
 #finalizarcompra input[type="submit"] {
-    margin: 10vw;
+    margin: 8vw;
     width: 15vw;
     height: 10vh;
     border-radius: 20vw;
@@ -412,6 +412,18 @@ footer {
 #gostou p {
     display: inline;
     padding: 2vw;
+}
+
+.estrela {
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.estrela.selecionada {
+    color: gold;
 }
 
 #imagemavaliacao {

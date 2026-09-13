@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Web</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -57,13 +58,20 @@
                     <h2>Avaliação</h2>
                     <div id="gostou">
                         <p>Gostou?</p> 
-                        <img src="imagens/estrelas.webp" alt="Imagem das estrelas" id="imagemavaliacao">
+                        <div id="estrelas">
+                            <button class="estrela" data-nota="1">☆</button>
+                            <button class="estrela" data-nota="2">☆</button>
+                            <button class="estrela" data-nota="3">☆</button>
+                            <button class="estrela" data-nota="4">☆</button>
+                            <button class="estrela" data-nota="5">☆</button>
+                        </div>
+                        <p id="nota">Nenhuma avaliação</p>
                     </div>
                     <div>
                         <form action="#" id="formavaliacao">
                             <p>Diga-nos a sua opinião: </p> <br>
                             <textarea name="comentarios" id="comentarios" placeholder="Avaliação..."></textarea> <br> <br>
-                            <input type="submit" value="Enviar" id="enviaravaliacao" class="botao">
+                            <input type="submit" value="Enviar" id="enviaravaliacao" class="botao" onclick="alert('Avaliação enviada!')">
                             <input type="reset" name="apagar" id="apagaravaliacao" value="Apagar" class="botao">
                         </form>
                     </div>

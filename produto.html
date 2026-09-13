@@ -43,7 +43,7 @@
         <fieldset class="fieldproduto">
             <div class="imagemebotao">
                 <img src="imagens/xis.jpeg" alt="Imagem do Hambúrguer" class="produtoimagem">                        
-                <button class="botaocolocarcarrinho">Adicionar ao carrinho</button>
+                <button class="botaocolocarcarrinho" onclick="adicionarCarrinho('Hambúrguer', 35.00, document.getElementById('quantidade').value)">Adicionar ao carrinho</button>
                 <label for="quantidade">Quantidade:</label> <input type="number" id="quantidade" name="quantidade" min="1" max="100" oninput="verificarTotal()">
             </div>
             <fieldset class="fieldtextoproduto">
