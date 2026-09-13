@@ -183,28 +183,30 @@ function aplicarCupom() {
 
 /* Avaliação */
 
-const estrelas = document.querySelectorAll(".estrela");
-const textoNota = document.getElementById("nota");
+if (document.getElementById("estrelas")) {
 
-let notaSelecionada = 0;
+    const estrelas = document.querySelectorAll(".estrela");
+    const textoNota = document.getElementById("nota");
 
-estrelas.forEach((estrela) => {
-    estrela.addEventListener("click", () => {
-        notaSelecionada = Number(estrela.dataset.nota);
+    let notaSelecionada = 0;
 
-        estrelas.forEach((item) => {
-            const valor = Number(item.dataset.nota);
+    estrelas.forEach((estrela) => {
+        estrela.addEventListener("click", () => {
+            notaSelecionada = Number(estrela.dataset.nota);
 
-            if (valor <= notaSelecionada) {
-                item.textContent = "★";
-                item.classList.add("selecionada");
-            } else {
-                item.textContent = "☆";
-                item.classList.remove("selecionada");
-            }
+            estrelas.forEach((item) => {
+                const valor = Number(item.dataset.nota);
+
+                if (valor <= notaSelecionada) {
+                    item.textContent = "★";
+                    item.classList.add("selecionada");
+                } else {
+                    item.textContent = "☆";
+                    item.classList.remove("selecionada");
+                }
+            });
+
+            textoNota.textContent = `Nota: ${notaSelecionada} / 5`;
         });
-
-        textoNota.textContent = `Nota: ${notaSelecionada} / 5`;
     });
-});
-
+}
