@@ -12,11 +12,12 @@ function verificarDados(pagina) {
     let campos = [{valor: login, nomeExibicao: "Login" }, {valor: senha, nomeExibicao: "Senha" }];
 
     if (pagina === 'cadastro') {
-        let nome = document.getElementById("name").value;
+        let nome = document.getElementById("nome").value;
         let cpf = document.getElementById("cpf").value;
-        let data = document.getElementById("data").value;
+        let email = document.getElementById("email").value;
+        let data = document.getElementById("data_nascimento").value;
     
-        for (let i of [{valor: nome, nomeExibicao: "Nome" }, {valor: cpf, nomeExibicao: "CPF" }, {valor: data, nomeExibicao: "Data de Nascimento" }]) {
+        for (let i of [{valor: nome, nomeExibicao: "Nome" }, {valor: cpf, nomeExibicao: "CPF" }, {valor: email, nomeExibicao: "E-mail" }, {valor: data, nomeExibicao: "Data de Nascimento" }]) {
             campos.push(i)
         }
     }
@@ -30,6 +31,9 @@ function verificarDados(pagina) {
             }
             naoPreenchidos += item.nomeExibicao;
         }
+    }
+
+    if (naoPreenchidos !== '') {
         document.getElementById("avisoDados").textContent = `É necessário preencher os campos: ${naoPreenchidos} para prosseguir.`
         modal.style.display = 'flex';
     }
