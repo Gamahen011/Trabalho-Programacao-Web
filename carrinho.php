@@ -1,3 +1,12 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once "proteger.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +23,7 @@
     <header>
         <fieldset class="fieldheader">
             <div>
-                <a href="menu.html" class="botaoinicio">
+                <a href="menu.php" class="botaoinicio">
                     <img src="imagens/delivery-web.png" alt="Logo Delivery Web" class="logo">
                     <h1>Delivery <br> Web</h1>
                 </a>
@@ -26,16 +35,17 @@
                 </form>
             </div>
             <div>
-                <form action="login.html">
+                <form action="login.php">
                     <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
                 </form>
             </div>
+
             <div>
-                <form action="carrinho.html">
-                    <button type="submit" class="botaocarrinho">
-                        <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
-                    </button>
-                </form>     
+                <div>
+                    <form action="logout.php">
+                        <input type="submit" class="botaologin" name="botao" id="botaologin" value="Sair">
+                    </form>
+                </div>
             </div>
         </fieldset>
     </header>

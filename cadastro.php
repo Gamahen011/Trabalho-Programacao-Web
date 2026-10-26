@@ -1,3 +1,50 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+include "conectar.php";
+
+function alertar($mensagem) {
+    echo "<script>alert(" . json_encode($mensagem) . ");</script>";
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $nome = $_POST['nome'] ?? '';
+    $login = $_POST['login'] ?? '';
+    $senha = $_POST['senha'] ?? '';
+    $cpf = $_POST['cpf'] ?? '';
+    $data_nascimento = $_POST['data_nascimento'] ?? '';
+    $email = $_POST['email'] ?? '';
+    
+    if (!empty($nome) && !empty($login) && !empty($senha) && !empty($cpf) && !empty($data_nascimento) && !empty($email)) {
+        
+        $senha = password_hash($senha, PASSWORD_DEFAULT);
+
+        try {
+            $stmt = $conn->prepare("INSERT INTO usuarios (nome, login, senha, cpf, data_nascimento, email) VALUES (?, ?, ?, ?, ?, ?)"); //stmt = statement
+            $stmt->bind_param("ssssss", $nome, $login, $senha, $cpf, $data_nascimento, $email);
+            $stmt->execute();
+            alertar("Usuário cadastrado com sucesso!");
+            $stmt->close();
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) { 
+                alertar("Erro: login, CPF ou e-mail já cadastrado.");
+            } else {
+                alertar("Erro ao inserir registro: " . $e->getMessage());
+            }
+        }
+    } else {
+        alertar("Erro: Por favor, preencha todos os campos.");
+    }
+}
+    
+    $conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +61,7 @@
     <header>
         <fieldset class="fieldheader">
             <div>
-                <a href="menu.html" class="botaoinicio">
+                <a href="menu.php" class="botaoinicio">
                     <img src="imagens/delivery-web.png" alt="Logo Delivery Web" class="logo">
                     <h1>Delivery <br> Web</h1>
                 </a>
@@ -26,12 +73,12 @@
                 </form>
             </div>
             <div>
-                <form action="login.html">
+                <form action="login.php">
                     <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
                 </form>
             </div>
             <div>
-                <form action="carrinho.html">
+                <form action="carrinho.php">
                     <button type="submit" class="botaocarrinho">
                         <img src="imagens/carrinho.png" alt="Icone carrinho" class="iconecarrinho">
                     </button>
@@ -42,20 +89,22 @@
     <div>
         <fieldset class="fieldcadastro">
             <h2>Tela de cadastro</h2>
-            <form action="menu.html">
+            <form action="cadastro.php" method="post">
                 <label for="name">Nome:</label> 
-                <input type="text" id="name" required> <br>
+                <input type="text" id="nome" name="nome" required> <br>
                 <label for="login">Login:</label> 
-                <input type="text" id="login" required> <br>
+                <input type="text" id="login" name="login" required> <br>
                 <label for="senha">Senha:</label>
-                <input type="text" id="senha" required> <br>
+                <input type="password" id="senha" name="senha" required> <br>
                 <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" placeholder="00000000000" maxlength="11" required> <br>
+                <input type="text" id="cpf" name="cpf" placeholder="00000000000" maxlength="11" required> <br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required> <br>
                 <label for="data">Data de nascimento:</label>
-                <input type="date" id="data" required> <br> <br>
+                <input type="date" id="data_nascimento" name="data_nascimento" required> <br> <br>
                 <button type="submit" value="Enviar" class="botao" onclick="verificarDados('cadastro')">Cadastrar</button>
                 <button type="reset" value="Apagar" class="botao">Apagar</button>
-                <p id="escolherlogin">Já possui conta? <a href="login.html">Clique aqui</a></p>
+                <p id="escolherlogin">Já possui conta? <a href="login.php">Clique aqui</a></p>
                 <div id="modal" class="modal-fundo">
                     <div class="modal-conteudo">
                         <h2>Aviso</h2>
