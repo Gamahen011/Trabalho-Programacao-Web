@@ -3,8 +3,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 include "conectar.php";
+
+$mensagemSucesso = "";
 
 function alertar($mensagem) {
     echo "<script>alert(" . json_encode($mensagem) . ");</script>";
@@ -27,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare("INSERT INTO usuarios (nome, login, senha, cpf, data_nascimento, email) VALUES (?, ?, ?, ?, ?, ?)"); //stmt = statement
             $stmt->bind_param("ssssss", $nome, $login, $senha, $cpf, $data_nascimento, $email);
             $stmt->execute();
-            alertar("Usuário cadastrado com sucesso!");
+            $mensagemSucesso = "Usuário cadastrado com sucesso!";
             $stmt->close();
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1062) { 
@@ -73,8 +78,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
             <div>
-                <form action="login.php">
-                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                <form action="<?= isset($_SESSION["usuario_id"]) ? "logout.php" : "login.php" ?>">
+                <?php if (isset($_SESSION["usuario_login"])): ?>
+                    <span class="usuario-logado">Olá, <?= htmlspecialchars($_SESSION["usuario_login"], ENT_QUOTES, "UTF-8") ?></span>
+                <?php endif; ?>
+                <input type="submit" class="botaologin" name="botao" id="botaologin" value="<?= isset($_SESSION["usuario_id"]) ? "Sair" : "Entrar" ?>">
                 </form>
             </div>
             <div>
@@ -102,17 +110,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="email" id="email" name="email" required> <br>
                 <label for="data">Data de nascimento:</label>
                 <input type="date" id="data_nascimento" name="data_nascimento" required> <br> <br>
-                <button type="submit" value="Enviar" class="botao" onclick="verificarDados('cadastro')">Cadastrar</button>
+                <button type="submit" value="Enviar" class="botao" onclick="return verificarDados('cadastro')">Cadastrar</button>
                 <button type="reset" value="Apagar" class="botao">Apagar</button>
                 <p id="escolherlogin">Já possui conta? <a href="login.php">Clique aqui</a></p>
-                <div id="modal" class="modal-fundo">
-                    <div class="modal-conteudo">
-                        <h2>Aviso</h2>
-                        <p id="avisoDados"></p> <br>
-                        <button id="fechar" class="botao">Fechar</button>
-                    </div>
-                </div>
             </form>
+            <div id="modal" class="modal-fundo" data-redirect="<?= $mensagemSucesso !== "" ? "login.php" : "" ?>" style="<?= $mensagemSucesso !== "" ? "display: flex;" : "" ?>">
+                <div class="modal-conteudo" role="alertdialog" aria-modal="true" aria-labelledby="titulo-aviso">
+                    <h2 id="titulo-aviso">Aviso</h2>
+                    <p id="avisoDados" class="<?= $mensagemSucesso !== "" ? "aviso-sucesso" : "" ?>"><?= htmlspecialchars($mensagemSucesso, ENT_QUOTES, "UTF-8") ?></p><br>
+                    <button id="fechar" type="button" class="botao" onclick="fecharAviso()">Fechar</button>
+                </div>
+            </div>
         </fieldset>
     </div>
     <footer>

@@ -1,4 +1,8 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 require_once "conectar.php";
 
 $produtos = ['Lanches' => [], 'Marmitas' => []];
@@ -13,7 +17,7 @@ function exibirProdutos($lista) {
         $img   = htmlspecialchars($p['imagem'], ENT_QUOTES, "UTF-8");
         $preco = number_format($p['preco'], 2, ',', '.');
         
-        $href  = ($p['nome'] === 'Hambúrguer') ? ' href="produto.html"' : '';
+        $href  = ($p['nome'] === 'Hambúrguer') ? ' href="produto.php"' : '';
         echo "
                 <fieldset class=\"fieldanuncio\">
                     <a{$href} class=\"botaoanuncios\" data-id=\"{$p['id']}\" data-nome=\"{$nome}\" data-preco=\"{$p['preco']}\">
@@ -52,8 +56,11 @@ function exibirProdutos($lista) {
                 </div>
             </div>
             <div>
-                <form action="login.php">
-                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                <form action="<?= isset($_SESSION["usuario_id"]) ? "logout.php" : "login.php" ?>">
+                    <?php if (isset($_SESSION["usuario_login"])): ?>
+                        <span class="usuario-logado">Olá, <?= htmlspecialchars($_SESSION["usuario_login"], ENT_QUOTES, "UTF-8") ?></span>
+                    <?php endif; ?>
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="<?= isset($_SESSION["usuario_id"]) ? "Sair" : "Entrar" ?>">
                 </form>
             </div>
             <div>
@@ -78,7 +85,7 @@ function exibirProdutos($lista) {
                 <?php exibirProdutos($produtos['Marmitas']); ?>
             </div>
         </div>
-        <form action="avaliacoes.html" id="paraavaliacao">
+        <form action="avaliacoes.php" id="paraavaliacao">
             <p>Deseja avaliar algum produto?</p> <br>
             <input type="submit" value="Avaliar" class="botao">
         </form>

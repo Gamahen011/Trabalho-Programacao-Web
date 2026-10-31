@@ -5,7 +5,7 @@
 function verificarDados(pagina) {
 
     const modal = document.getElementById('modal');
-    const fechar = document.getElementById('fechar');
+    if (!modal) return true;
     let login = document.getElementById("login").value;
     let senha = document.getElementById("senha").value;
     
@@ -36,12 +36,37 @@ function verificarDados(pagina) {
     if (naoPreenchidos !== '') {
         document.getElementById("avisoDados").textContent = `É necessário preencher os campos: ${naoPreenchidos} para prosseguir.`
         modal.style.display = 'flex';
+        return false;
     }
 
-    fechar.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
+    return true;
 };
+
+function fecharAviso() {
+    const modal = document.getElementById('modal');
+    if (!modal) return;
+
+    modal.style.display = 'none';
+    if (modal.dataset.limparCarrinho === 'true') {
+        localStorage.removeItem('carrinho');
+    }
+
+    if (modal.dataset.redirect) {
+        window.location.href = modal.dataset.redirect;
+    }
+}
+
+function finalizarCompra() {
+    const modal = document.getElementById('modal');
+    const mensagem = document.getElementById('avisoDados');
+    if (!modal || !mensagem) return;
+
+    mensagem.textContent = 'Compra finalizada!';
+    mensagem.classList.add('aviso-sucesso');
+    modal.dataset.limparCarrinho = 'true';
+    modal.dataset.redirect = 'menu.php';
+    modal.style.display = 'flex';
+}
 
 /* Produto */
 
@@ -65,8 +90,12 @@ function exibirCarrinho(desconto = 0) {
 
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     let carrinhodiv = document.getElementById('produtoscarrinho');
-    carrinhodiv.innerHTML = `<h2 id="titulocarrinho">Seu carrinho</h2>
-    <input type="submit" value="Limpar" onclick="limparCarrinho()" class='botao'>`;
+    carrinhodiv.innerHTML = `<h2 id="titulocarrinho">Seu carrinho</h2>`;
+    if (carrinho.length === 0) {
+        carrinhodiv.innerHTML += `<p class="carrinho-vazio">Seu carrinho está vazio</p>`;
+    } else {
+        carrinhodiv.innerHTML += `<input type="submit" value="Limpar" onclick="limparCarrinho()" class='botao'>`;
+    }
     carrinho.forEach(item => {
         carrinhodiv.innerHTML += `
             <fieldset class="itemcarrinho">

@@ -1,3 +1,8 @@
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,8 +31,11 @@
                 </form>
             </div>
             <div>
-                <form action="login.php">
-                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                <form action="<?= isset($_SESSION["usuario_id"]) ? "logout.php" : "login.php" ?>">
+                    <?php if (isset($_SESSION["usuario_login"])): ?>
+                        <span class="usuario-logado">Olá, <?= htmlspecialchars($_SESSION["usuario_login"], ENT_QUOTES, "UTF-8") ?></span>
+                    <?php endif; ?>
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="<?= isset($_SESSION["usuario_id"]) ? "Sair" : "Entrar" ?>">
                 </form>
             </div>
             <div>

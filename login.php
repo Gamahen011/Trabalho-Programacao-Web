@@ -7,6 +7,8 @@ session_start();
 require_once "conectar.php";
 
 $erro = "";
+$mensagemSucesso = $_SESSION["mensagem_sucesso"] ?? "";
+unset($_SESSION["mensagem_sucesso"]);
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -29,12 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["usuario_id"] = $usuario["cpf"];
         $_SESSION["usuario_nome"] = $usuario["nome"];
         $_SESSION["usuario_login"] = $usuario["login"];
-
-        echo "<script>
-                alert('Login realizado com sucesso!');
-                window.location.href = 'carrinho.php';
-            </script>";
-        
+        $_SESSION["mensagem_sucesso"] = "Login realizado com sucesso!";
+        $stmt->close();
+        $conn->close();
+        header("Location: login.php");
         exit;
     } else {
         $erro = "Login ou senha incorretos.";
@@ -73,8 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </form>
             </div>
             <div>
-                <form action="login.php">
-                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                <form action="<?= isset($_SESSION["usuario_id"]) ? "logout.php" : "login.php" ?>">
+                    <?php if (isset($_SESSION["usuario_login"])): ?>
+                        <span class="usuario-logado">Olá, <?= htmlspecialchars($_SESSION["usuario_login"], ENT_QUOTES, "UTF-8") ?></span>
+                    <?php endif; ?>
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="<?= isset($_SESSION["usuario_id"]) ? "Sair" : "Entrar" ?>">
                 </form>
             </div>
             <div>
@@ -99,17 +102,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="text" id="login" name="login" required> <br>
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required>
-                <button type="submit" value="Enviar" class="botao" onclick="verificarDados('login')">Enviar</button>
+                <button type="submit" value="Enviar" class="botao" onclick="return verificarDados('login')">Enviar</button>
                 <button type="reset" value="Apagar" class="botao">Apagar</button>
                 <p id="escolhercadastro">Não tem conta? <a href="cadastro.php">Clique aqui</a></p>
-                <div id="modal" class="modal-fundo">
-                    <div class="modal-conteudo">
-                        <h2>Aviso</h2>
-                        <p id="avisoDados"></p> <br>
-                        <button id="fechar" class="botao">Fechar</button>
-                    </div>
-                </div>
             </form>
+            <div id="modal" class="modal-fundo" data-redirect="<?= $mensagemSucesso !== "" ? "menu.php" : "" ?>" style="<?= $mensagemSucesso !== "" ? "display: flex;" : "" ?>">
+                <div class="modal-conteudo" role="alertdialog" aria-modal="true" aria-labelledby="titulo-aviso">
+                    <h2 id="titulo-aviso">Aviso</h2>
+                    <p id="avisoDados" class="<?= $mensagemSucesso !== "" ? "aviso-sucesso" : "" ?>"><?= htmlspecialchars($mensagemSucesso, ENT_QUOTES, "UTF-8") ?></p><br>
+                    <button id="fechar" type="button" class="botao" onclick="fecharAviso()">Fechar</button>
+                </div>
+            </div>
         </fieldset>
     </div>
     <footer>

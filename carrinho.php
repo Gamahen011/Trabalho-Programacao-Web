@@ -35,17 +35,10 @@ require_once "proteger.php";
                 </form>
             </div>
             <div>
-                <form action="login.php">
-                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Entrar">
+                <form action="logout.php">
+                    <span class="usuario-logado">Olá, <?= htmlspecialchars($_SESSION["usuario_login"] ?? $_SESSION["usuario_nome"], ENT_QUOTES, "UTF-8") ?></span>
+                    <input type="submit" class="botaologin" name="botao" id="botaologin" value="Sair">
                 </form>
-            </div>
-
-            <div>
-                <div>
-                    <form action="logout.php">
-                        <input type="submit" class="botaologin" name="botao" id="botaologin" value="Sair">
-                    </form>
-                </div>
             </div>
         </fieldset>
     </header>
@@ -74,10 +67,17 @@ require_once "proteger.php";
                     </fieldset>
                 </div>
                 <div id="finalizarcompra">
-                   <input type="submit" value="Finalizar compra">
+                   <input type="button" value="Finalizar compra" onclick="finalizarCompra()">
                 </div>
             </fieldset>
         </div>    
+    </div>
+    <div id="modal" class="modal-fundo">
+        <div class="modal-conteudo" role="alertdialog" aria-modal="true" aria-labelledby="titulo-aviso">
+            <h2 id="titulo-aviso">Aviso</h2>
+            <p id="avisoDados"></p><br>
+            <button id="fechar" type="button" class="botao" onclick="fecharAviso()">Fechar</button>
+        </div>
     </div>
     <footer>
         <fieldset class="fieldfooter">

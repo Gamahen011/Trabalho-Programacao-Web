@@ -77,6 +77,10 @@ h1 {
     color: #ffffff;
 }
 
+.usuario-logado {
+    margin-right: 1vw;
+}
+
 button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     text-decoration: underline;
 }
@@ -236,6 +240,10 @@ footer {
     font-weight: bold;
 }
 
+.aviso-sucesso {
+    color: #195e63 !important;
+}
+
 /* CSS Cadastro */
 
 
@@ -293,6 +301,10 @@ footer {
     height: 90vh;
     margin: 1vw;
     margin-bottom: 35vh;
+}
+
+.carrinho-vazio {
+    margin: 2vw;
 }
 
 .produtoscarrinho fieldset {
@@ -365,7 +377,7 @@ footer {
     cursor: pointer;
 }
 
-#finalizarcompra input[type="submit"] {
+#finalizarcompra input[type="button"] {
     margin: 8vw;
     width: 15vw;
     height: 10vh;
