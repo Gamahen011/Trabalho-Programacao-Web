@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 $servername = "localhost";
 $username = "root"; 
-$password = "ifsc";
+$password = "";
 $dbname = "delivery_web";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
